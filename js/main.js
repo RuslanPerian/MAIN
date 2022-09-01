@@ -233,6 +233,8 @@ if (isJavaScriptScroll) {
                     screenUp();
                     break;
                 case 'Home':
+                    window.location.href = 'https://megogo.net/ua';
+                    break;
                 case 'PageUp':
                     while (index > 0){
                         screenUp();
