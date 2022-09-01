@@ -220,6 +220,19 @@ if (isJavaScriptScroll) {
             }
         }
     }, false)
+    
+    document.addEventListener('keydown', (e) => {
+        e.preventDefault();
+
+        if (!isAnimate){
+            if (e.code === 'ArrowDown'){
+                screenDown();
+            }
+            else if (e.code === 'ArrowUp'){
+                screenUp();
+            }
+        }
+    })
 }
 else {
     const scroll = document.querySelector('.scroll'),
