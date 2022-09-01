@@ -225,11 +225,25 @@ if (isJavaScriptScroll) {
         e.preventDefault();
 
         if (!isAnimate){
-            if (e.code === 'ArrowDown'){
-                screenDown();
-            }
-            else if (e.code === 'ArrowUp'){
-                screenUp();
+            switch (e.code){
+                case 'ArrowDown':
+                    screenDown();
+                    break;
+                case 'ArrowUp':
+                    screenUp();
+                    break;
+                case 'Home':
+                case 'PageUp':
+                    while (index > 0){
+                        screenUp();
+                    }
+                    break;
+                case 'End':
+                case 'PageDown':
+                    while (index < numberOfSections - 1){
+                        screenDown();
+                    }
+                    break;
             }
         }
     })
