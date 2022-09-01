@@ -154,7 +154,7 @@ let fullScreenScroll = () => {
     }
     
     screen.style.transform = `translate(0, ${-index * h}px)`;
-    screen.style.transition = `all 0ms ease 0s`;
+    screen.style.transition = 'all 0ms ease 0s';
 }
 
 let onWheel = (e) => {
