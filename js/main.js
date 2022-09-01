@@ -152,6 +152,9 @@ let fullScreenScroll = () => {
         sections[i].style.top = `${i * h}px`;
         sections[i].style.left = '0';
     }
+    
+    screen.style.transform = `translate(0, ${-index * h}px)`;
+    screen.style.transition = `all 0ms ease 0s`;
 }
 
 let onWheel = (e) => {
