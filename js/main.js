@@ -277,16 +277,20 @@ const showBtn = (btnClass, showItemClass, isSection, typeOfScroll) => {
                         screenDown();
                         item.classList.add('section');
                         fullScreenScroll();
+                        animationTimer();
                     }
                     else {
                         screenUp();
                         let animationStart = Date.now();
 
-                        let timer = setInterval(() => {
+                        let timer = setTimeout(() => {
+                            isAnimate = true;
+                            
                             let timePassed = Date.now() - animationStart;
 
                             if (timePassed >= animationTime){
-                                clearInterval(timer);
+                                clearTimeout(timer);
+                                isAnimate = false;
                                 item.classList.remove('section');
                                 if (typeOfScroll === 'hScroll'){
                                     $('.show_off').css({'width': '0', 'filter': 'alpha(opacity=0)', 'opacity': '0'});
